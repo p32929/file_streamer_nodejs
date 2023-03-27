@@ -44,11 +44,16 @@ const getPinterestData = (csrfValue, url, cookie, callback) => {
         const arr = []
         const document = new JSDOM(response.body).window.document;
         var qls = document.getElementsByClassName('quality_list')
+        const down_file_preview = document.getElementsByClassName('down_file_preview')
+
         if (qls.length > 0) {
             for (var i = 0; i < qls.length; i++) {
                 const as = qls[i].getElementsByTagName('a')
+
+                const thumb = document.getElementsByClassName('down_file_preview')[i].getElementsByTagName('img')[0].src
                 const obj = {
                     title: `Image ${i + 1}`,
+                    thumb: thumb,
                     links: []
                 }
                 for (var j = 0; j < as.length; j++) {
@@ -71,9 +76,11 @@ const getPinterestData = (csrfValue, url, cookie, callback) => {
             var qls = document.getElementsByClassName('down_file_container')
             for (var i = 0; i < qls.length; i++) {
                 const as = qls[i].getElementsByTagName('a')
+                const thumb = document.getElementsByClassName('down_file_preview')[i].getElementsByTagName('video')[0].src
 
                 const obj = {
                     title: `Video ${i + 1}`,
+                    thumb: thumb,
                     links: []
                 }
                 for (var j = 0; j < as.length; j++) {
