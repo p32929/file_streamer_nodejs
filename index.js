@@ -51,7 +51,7 @@ app.get('/pinterest', async (req, res) => {
         },
         form: {
             'csrfmiddlewaretoken': 'BfsPUaR8rLnUQiJgFcwhuBi4UhoGm10EpOzWnA0w1cq1N9iJmGnKS3NBGW5kdGqe',
-            'download': 'https://pin.it/7s8jhxV'
+            'download': url
         }
     };
     request(options, function (error, response) {
