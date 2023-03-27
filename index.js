@@ -94,7 +94,7 @@ app.get('/pinterest', async (req, res) => {
 
 const PORT = process.env.PORT || 5000;
 app.get('/', (req, res) => {
-    res.send('Hello Redirector v13')
+    res.send('Hello Redirector v14')
 })
 
 app.listen(PORT, () => {
