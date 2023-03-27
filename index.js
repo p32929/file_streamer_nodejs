@@ -65,7 +65,7 @@ app.get('/pinterest', async (req, res) => {
                 const as = qls[i].getElementsByTagName('a')
                 const text = `Image ${i + 1}`
                 const href = as[5].href
-                console.log(text, href)
+                // console.log(text, href)
                 arr.push({
                     title: text,
                     link: href
@@ -78,7 +78,7 @@ app.get('/pinterest', async (req, res) => {
                 const as = qls[i].getElementsByTagName('a')
                 const text = `Video ${i + 1}`
                 const href = as[1].href
-                console.log(text, href)
+                // console.log(text, href)
                 arr.push({
                     title: text,
                     link: href
@@ -94,7 +94,7 @@ app.get('/pinterest', async (req, res) => {
 
 const PORT = process.env.PORT || 5000;
 app.get('/', (req, res) => {
-    res.send('Hello Redirector v14')
+    res.send('Hello Redirector v16')
 })
 
 app.listen(PORT, () => {
